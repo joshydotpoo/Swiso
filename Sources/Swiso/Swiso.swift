@@ -21,7 +21,7 @@ public struct Swiso {
     
     private(set) var FieldAreaStructure:Node<Field>? 
     
-    init(_ data:Data, using FieldAreaStructure:Node<Field>? = nil) throws {
+    public init(_ data:Data, using FieldAreaStructure:Node<Field>? = nil) throws {
         self.data = data
         self.FieldAreaStructure = FieldAreaStructure
         try processRecord(0)
