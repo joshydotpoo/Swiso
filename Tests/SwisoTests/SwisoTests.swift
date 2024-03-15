@@ -1,12 +1,16 @@
 import XCTest
 @testable import Swiso
+import Foundation
 
 final class SwisoTests: XCTestCase {
     func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+        do {
+            var url = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            url = url.appendingPathComponent("playground/Github Contributions/Swiso/Tests/SwisoTests/US4AK6AT.000")
+            let data = try Data(contentsOf: url)
+            let swiso = try Swiso(data)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
