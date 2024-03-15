@@ -1,5 +1,12 @@
 # Swiso
 
+<p align="center">
+    <img src="https://img.shields.io/badge/Swift-orange.svg" alt="Swift" />
+    <a href="https://swift.org/package-manager">
+        <img src="https://img.shields.io/badge/swiftpm-compatible-brightgreen.svg?style=flat" alt="Swift Package Manager" />
+    </a>
+</p>
+
 ***Swiso***  is a ISO/IEC 8211 file parser implemented in Swift.
 
 ## Installation
