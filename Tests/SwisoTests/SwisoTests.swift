@@ -9,6 +9,10 @@ final class SwisoTests: XCTestCase {
             url = url.appendingPathComponent("playground/Github Contributions/Swiso/Tests/SwisoTests/US4AK6AT.000")
             let data = try Data(contentsOf: url)
             let swiso = try Swiso(data)
+            let a = swiso.Records[0].fieldarea as! SwisoDDRFieldArea
+            for a in a.structure.depthFirst {
+                print(a.element.)
+            }
         } catch {
             print(error.localizedDescription)
         }

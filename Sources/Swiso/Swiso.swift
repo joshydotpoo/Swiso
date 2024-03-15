@@ -14,7 +14,7 @@
 import Foundation
 import Tree
 
-struct Swiso {
+public struct Swiso {
     
     let data:Data
     private(set) var Records:[Record] = []

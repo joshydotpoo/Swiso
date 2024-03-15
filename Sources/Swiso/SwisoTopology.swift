@@ -9,14 +9,14 @@ import Foundation
 import Tree
 import Collections
 
-internal protocol Record {
+protocol Record {
     var recordType:RecordType {get}
     var leader:Leader? {get}
     var directory:Directory? {get}
     var fieldarea:FieldArea? {get}
 }
 
-internal protocol Leader {
+protocol Leader {
     var recordLength:Int {get}
     var leaderIdentifier:String {get}
     var fieldAreaAddress:Int {get}
@@ -38,7 +38,7 @@ struct Directory {
     }
 }
 
-internal protocol FieldArea {
+protocol FieldArea {
     var structure:Node<Field> {get}
 }
 
