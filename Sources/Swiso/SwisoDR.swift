@@ -83,18 +83,14 @@ public struct SwisoDRLeader:Leader {
 public struct SwisoDRFieldArea: FieldArea {
     
     var structure:Node<Field>
+    private(set) var subfields:OrderedDictionary<String, [Subfield]> = [:]
     
     init(subfieldData:OrderedDictionary<String, Data>, structure:Node<Field>) {
         self.structure = structure
         
         for (tag, data) in subfieldData {
-//            print("\(tag): \(ByteArray.toString(data))")
-
             let field = structure.node(identifiedBy: tag)!.element
-            print("tag: \(tag)")
-            print("_______________________________________________")
-            let subfields = Subfield.GetAll(field: field, data: data)
-            print("_______________________________________________")
+            subfields[tag] = Subfield.GetAll(field: field, data: data)
         }
 
     }
