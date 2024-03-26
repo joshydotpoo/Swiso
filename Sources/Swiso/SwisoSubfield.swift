@@ -10,7 +10,7 @@ import Collections
 import Tree
 
 
-struct Subfield {
+public struct Subfield {
     private(set) var tag:String
     private(set) var type:SubfieldType
     private(set) var width:Int
@@ -98,7 +98,7 @@ struct Subfield {
     }
 }
 
-struct SubfieldFormat {
+public struct SubfieldFormat {
     private(set) var type:SubfieldType
     private(set) var repeatCount:Int
     private(set) var width:Int? // will be nil if variable width
@@ -127,7 +127,7 @@ struct SubfieldFormat {
     }
 }
 
-enum SubfieldType:String, CaseIterable {
+public enum SubfieldType:String, CaseIterable {
     case string = "A"
     case real = "R"
     case bitstring = "B"
@@ -139,7 +139,7 @@ enum SubfieldType:String, CaseIterable {
     case int32 = "b24"
     case double = "b48"
     
-    func CastData(_ data:Data) -> Any {
+    public func CastData(_ data:Data) -> Any {
         switch(self) {
             case .uint8: return data.object() as UInt8
             case .uint16: return data.object() as UInt16
@@ -154,7 +154,7 @@ enum SubfieldType:String, CaseIterable {
         }
     }
     
-    static func GetType(_ value:String) -> SubfieldType? {
+    public static func GetType(_ value:String) -> SubfieldType? {
         let types = SubfieldType.allCases
         for type in types {
             if((value.range(of: type.rawValue)) != nil) {

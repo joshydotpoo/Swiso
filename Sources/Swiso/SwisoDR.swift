@@ -83,7 +83,7 @@ public struct SwisoDRLeader:Leader {
 public struct SwisoDRFieldArea: FieldArea {
     
     public var structure:Node<Field>
-    private(set) var subfields:OrderedDictionary<String, [Subfield]> = [:]
+    public private(set) var subfields:OrderedDictionary<String, [Subfield]> = [:]
     
     init(subfieldData:OrderedDictionary<String, Data>, structure:Node<Field>) {
         self.structure = structure
