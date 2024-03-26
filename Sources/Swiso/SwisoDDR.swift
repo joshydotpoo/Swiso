@@ -9,13 +9,13 @@ import Foundation
 import Tree
 
 public struct SwisoDDR:Record {
-    let recordType: RecordType = RecordType.DataDescriptiveRecord
+    public let recordType: RecordType = RecordType.DataDescriptiveRecord
     
     private(set) var data:Data
 
-    private(set) var leader: Leader?
-    private(set) var directory: Directory?
-    private(set) var fieldarea: FieldArea?
+    public private(set) var leader: Leader?
+    public private(set) var directory: Directory?
+    public private(set) var fieldarea: FieldArea?
     
     
     
@@ -40,12 +40,12 @@ public struct SwisoDDR:Record {
 }
 
 public struct SwisoDDRLeader:Leader {
-    var recordLength: Int
-    var leaderIdentifier: String
-    var codeExtensionIndicator: String
-    var versionNumber: String
-    var fieldAreaAddress: Int
-    var entryMap: EntryMap
+    public var recordLength: Int
+    public var leaderIdentifier: String
+    public var codeExtensionIndicator: String
+    public var versionNumber: String
+    public var fieldAreaAddress: Int
+    public var entryMap: EntryMap
     
     var fieldControlSize:Int = 9
     
@@ -61,7 +61,7 @@ public struct SwisoDDRLeader:Leader {
 
 public struct SwisoDDRFieldArea:FieldArea {
     
-    private(set) var structure:Node<Field>
+    public private(set) var structure:Node<Field>
     
     init(_ data:Data, entryMaps:[FieldMap]) {
         let fieldData:[Data] = data.split(separator: FormatControls.FT.rawValue)

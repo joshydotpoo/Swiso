@@ -10,11 +10,11 @@ import Tree
 import Collections
 
 public struct SwisoDR:Record {
-    let recordType: RecordType = RecordType.DataRecord
+    public let recordType: RecordType = RecordType.DataRecord
 
-    var leader: Leader?
-    var directory: Directory?
-    var fieldarea: FieldArea?
+    public var leader: Leader?
+    public var directory: Directory?
+    public var fieldarea: FieldArea?
     
     private(set) var data:Data
     
@@ -65,10 +65,10 @@ public struct SwisoDR:Record {
 }
 
 public struct SwisoDRLeader:Leader {
-    var recordLength: Int
-    var leaderIdentifier: String
-    var fieldAreaAddress: Int
-    var entryMap: EntryMap
+    public var recordLength: Int
+    public var leaderIdentifier: String
+    public var fieldAreaAddress: Int
+    public var entryMap: EntryMap
     
     var fieldControlSize:Int = 9
     
@@ -82,7 +82,7 @@ public struct SwisoDRLeader:Leader {
 
 public struct SwisoDRFieldArea: FieldArea {
     
-    var structure:Node<Field>
+    public var structure:Node<Field>
     private(set) var subfields:OrderedDictionary<String, [Subfield]> = [:]
     
     init(subfieldData:OrderedDictionary<String, Data>, structure:Node<Field>) {

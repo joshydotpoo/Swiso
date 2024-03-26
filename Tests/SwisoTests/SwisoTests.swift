@@ -11,7 +11,7 @@ final class SwisoTests: XCTestCase {
             let swiso = try Swiso(data)
             let a = swiso.Records[0].fieldarea as! SwisoDDRFieldArea
             for a in a.structure.depthFirst {
-                print(a.element.)
+                print(a.element.id)
             }
         } catch {
             print(error.localizedDescription)
