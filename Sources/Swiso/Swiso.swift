@@ -55,6 +55,10 @@ public struct Swiso {
         return RecordType(rawValue: recordIndicator)!
     }
     
+    public func getRecords() -> [Record] {
+        return Records
+    }
+    
     
     
 }

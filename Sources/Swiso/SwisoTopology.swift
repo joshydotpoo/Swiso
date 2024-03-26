@@ -9,14 +9,14 @@ import Foundation
 import Tree
 import Collections
 
-protocol Record {
+public protocol Record {
     var recordType:RecordType {get}
     var leader:Leader? {get}
     var directory:Directory? {get}
     var fieldarea:FieldArea? {get}
 }
 
-protocol Leader {
+public protocol Leader {
     var recordLength:Int {get}
     var leaderIdentifier:String {get}
     var fieldAreaAddress:Int {get}
@@ -24,7 +24,7 @@ protocol Leader {
     
 }
 
-struct Directory {
+public struct Directory {
     
     var fieldmaps:[FieldMap] = []
     
@@ -38,11 +38,11 @@ struct Directory {
     }
 }
 
-protocol FieldArea {
+public protocol FieldArea {
     var structure:Node<Field> {get}
 }
 
-internal struct EntryMap {
+public struct EntryMap {
     private(set) var lengthSize: Int
     private(set) var positionSize: Int
     private(set) var tagSize:Int
@@ -67,7 +67,7 @@ internal struct EntryMap {
     }
 }
 
-internal struct FormattingError:LocalizedError {
+public struct FormattingError:LocalizedError {
     let errorDescription: String
     
     init(_ errorDescription: String) {
